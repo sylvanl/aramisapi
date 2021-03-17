@@ -25,6 +25,7 @@ The query parameters are as follows:
     "id": "an id from estimations table",
 }
 ```
+Where `columns` are required and `id` is optional.
 
 
 #### All columns
