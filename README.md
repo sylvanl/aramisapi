@@ -19,8 +19,8 @@ It allows to choose the `columns` and/or the `id` to `GET`.
 The query parameters are as follows:
 ```json
 {
-	"columns": ["list", "of columns to be requested"],
-	"id": "an id from estimations table",
+    "columns": ["list", "of columns to be requested"],
+    "id": "an id from estimations table",
 }
 ```
 
@@ -75,7 +75,7 @@ You can choose as many columns in `columns` as needed.
 ##### Example
 ```json
 {
-	"columns": ["id", "vehicule_marque", "vehicule_modele", "estimation_prix_achat"],
+    "columns": ["id", "vehicule_marque", "vehicule_modele", "estimation_prix_achat"],
 }
 ```
 
@@ -85,14 +85,14 @@ To `GET` a specific `id`, you need to do is to add the `id` parameter with the e
 ##### Examples
 ```json
 {
-	"columns": ["all"],
+    "columns": ["all"],
     "id": "8827430",
 }
 ```
 
 ```json
 {
-	"columns": ["id", "vehicule_marque", "vehicule_modele", "estimation_prix_achat"],
+    "columns": ["id", "vehicule_marque", "vehicule_modele", "estimation_prix_achat"],
     "id": "8827430",
 }
 ```
