@@ -2,9 +2,25 @@ require('dotenv').config();
 
 const express = require('express');
 const app = express();
-app.use(express.json())
+const basicAuth = require('express-basic-auth')
 
 const PORT = process.env.PORT || 3001;
+app.use(express.json())
+
+app.use(basicAuth({
+    users: { 'admin': 'supersecret' },
+    unauthorizedResponse: getUnauthorizedResponse
+}))
+function getUnauthorizedResponse(req) {
+    return req.auth
+        ? ('Credentials ' + req.auth.user + ':' + req.auth.password + ' rejected')
+        : 'No credentials provided'
+}
+
+const routes = {
+    estimations: require('./routes/estimations'),
+    users: require('./routes/users')
+}
 
 app.get('/', function (req, res) {
     return res.json({
@@ -12,11 +28,6 @@ app.get('/', function (req, res) {
         availableRoutes: routes
     });
 })
-
-const routes = {
-    estimations: require('./routes/estimations'),
-    users: require('./routes/users')
-}
 
 app.get('/estimations', routes['estimations']['getEstimations']);
 

@@ -10,10 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "~8.2.0",
-    "express": "~4.17.1",
+    "api-key-auth": "^0.2.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-basic-auth": "^1.2.0",
     "joi": "^17.4.0",
-    "knex": "~0.95.1",
+    "knex": "^0.95.2",
     "pg": "~8.5.1"
   },
   "devDependencies": {},
