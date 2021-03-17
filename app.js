@@ -3,12 +3,13 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const basicAuth = require('express-basic-auth')
+const userstest = require('./utils/api-users').users;
 
 const PORT = process.env.PORT || 3001;
 app.use(express.json())
 
 app.use(basicAuth({
-    users: { 'admin': 'supersecret' },
+    users : userstest,
     unauthorizedResponse: getUnauthorizedResponse
 }))
 function getUnauthorizedResponse(req) {
