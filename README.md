@@ -31,7 +31,7 @@ To `GET` all `columns`, all you need is the columns parameter to contain `"all"`
 ##### Example
 ```json
 {
-	"columns": ["all"],
+    "columns": ["all"],
 }
 ```
 
