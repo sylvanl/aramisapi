@@ -10,7 +10,7 @@ Welcome to my data project API allowing you to manage data relating to the enhan
 * [Run](#Run)
 
 ## General
-Default route : 3001
+Default route : 3000
 
 ## Routes
 
