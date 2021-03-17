@@ -2,12 +2,12 @@
 Welcome to my data project API allowing you to manage data relating to the enhanced customer experience created by team 2.
 
 ## Table of contents
-[General information](#General)
-[Routes](#Routes)
-[Api versions](#Versions)
-[Installation](#Installation)
-[Settings](#Settings)
-[Run](#Run)
+* [General information](#General)
+* [Routes](#Routes)
+* [Api versions](#Versions)
+* [Installation](#Installation)
+* [Settings](#Settings)
+* [Run](#Run)
 
 ## General
 Default route : 3001
