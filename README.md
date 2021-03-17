@@ -75,7 +75,7 @@ You can choose as many columns in `columns` as needed.
 ##### Example
 ```json
 {
-	"columns": ["id", "vehicule_marque", "vehicule_modele", "vehicule_energie", "vehicule_date_mec", "vehicule_km", "vehicule_finition", "vehicule_transmission", "estimation_prix_achat", "estimation_prix_vente", "estimation_reprise_type_estimation",],
+	"columns": ["id", "vehicule_marque", "vehicule_modele", "estimation_prix_achat"],
 }
 ```
 
@@ -92,7 +92,7 @@ To `GET` a specific `id`, you need to do is to add the `id` parameter with the e
 
 ```json
 {
-	"columns": ["id", "vehicule_marque", "vehicule_modele", "vehicule_energie", "vehicule_date_mec", "vehicule_km", "vehicule_finition", "vehicule_transmission", "estimation_prix_achat", "estimation_prix_vente", "estimation_reprise_type_estimation",],
+	"columns": ["id", "vehicule_marque", "vehicule_modele", "estimation_prix_achat"],
     "id": "8827430",
 }
 ```
