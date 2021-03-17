@@ -1,3 +1,4 @@
+// List of columns in each database table
 module.exports = {
     estimation_columns: ['id',
         'vehicule_marque',

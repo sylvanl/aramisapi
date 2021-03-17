@@ -1,28 +1,31 @@
+// Imports
 require('dotenv').config();
-
 const express = require('express');
 const app = express();
 const basicAuth = require('express-basic-auth')
-const userstest = require('./utils/api-users').users;
-
-const PORT = process.env.PORT || 3001;
+const apiusers = require('./utils/api-users').users;
+const PORT = process.env.PORT || 3000;
 app.use(express.json())
 
+// Basic authentification
 app.use(basicAuth({
-    users : userstest,
+    users : apiusers,
     unauthorizedResponse: getUnauthorizedResponse
 }))
+
+// Authentification error message
 function getUnauthorizedResponse(req) {
     return req.auth
         ? ('Credentials ' + req.auth.user + ':' + req.auth.password + ' rejected')
         : 'No credentials provided'
 }
 
+// Import routes
 const routes = {
     estimations: require('./routes/estimations'),
-    users: require('./routes/users')
 }
 
+// Home route
 app.get('/', function (req, res) {
     return res.json({
         apiStutus: 'RUNNING :: 200',
@@ -30,11 +33,8 @@ app.get('/', function (req, res) {
     });
 })
 
+// Estimations route
 app.get('/estimations', routes['estimations']['getEstimations']);
 
-app.get('/users', routes['users']['getUsers']);
-app.get('/users/:username', routes['users']['getUser']);
-app.post('/users', routes['users']['getUsers']);
-app.delete('/users/:usernames', routes['users']['deleteUsers']);
-
+// Run app on chosen PORT in .env
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

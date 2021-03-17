@@ -1,3 +1,4 @@
+// Call and connect to postgresql database
 module.exports = require('knex')({
     client: 'pg',
     connection: {
@@ -7,4 +8,3 @@ module.exports = require('knex')({
         }
     }
 });
-
