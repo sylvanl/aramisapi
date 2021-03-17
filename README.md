@@ -10,12 +10,12 @@ Welcome to my data project API allowing you to manage data relating to the enhan
 * [Run](#Run)
 
 ## General
-Default route : 3000
+Default port : 3000
 
 ## Routes
 
 ### Estimations
-The `estimations` route allows you to retrieve car estimations from Aramaisauto.
+The `estimations` route found on `/estimations` allows you to retrieve car estimations from Aramaisauto.
 It allows to choose the `columns` and/or the `id` to `GET`.
 
 The query parameters are as follows:

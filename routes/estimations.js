@@ -38,9 +38,10 @@ module.exports = {
         const columns = req.body.columns;
         const id = req.body.id;
         let estimations = [];
+        console.log(id)
 
         try {
-            if (id !== null) {
+            if (id !== undefined) {
                 if (columns.includes("all")) {
                     console.log("All data")
                     estimations = await pg.select(...estimation_columns)
