@@ -5,12 +5,12 @@ Welcome to my data project API allowing you to manage data relating to the enhan
 * [General information](#General)
 * [Routes](#Routes)
 * [Api versions](#Versions)
+* [Installation](#Installation)
 
 ## General
 Default route : 3001
 
 ## Routes
----
 
 ### Estimations
 The `estimations` route allows you to retrieve car estimations from Aramaisauto.
@@ -98,4 +98,73 @@ To `GET` a specific `id`, you need to do is to add the `id` parameter with the e
 ```
 
 ## Versions
---- Comming Soon ---
+--- Coming Soon ---
+
+## Installation
+This part of the documentation is for installing the api on your local machine.
+
+### Prerequisits
+Node v14.16.0 (other versions may also work but have not been tested).
+
+### Install modules
+
+#### Node
+Install [node](https://nodejs.org/en/) modules.
+```
+npm install
+```
+
+#### Express
+Install [express](https://expressjs.com/fr/) node framework.
+```
+npm i express
+```
+
+#### Knex
+Install [knex](http://knexjs.org/) SQL query builder.
+```
+npm i knex
+```
+
+#### Joi
+Install [joi](https://joi.dev/api/?v=17.4.0) data schema validation used here to validate query.
+```
+npm i joi
+```
+
+#### Dotenv
+Install [dotenv](https://www.npmjs.com/package/dotenv) to store envoronment variables in .env.
+```
+npm i dotenv
+```
+
+#### Express basic auth
+Install [express basic auth](https://www.npmjs.com/package/express-basic-auth) to provide basic athentification.
+```
+npm i express-basic-auth
+```
+
+### Settings
+
+#### .env
+Create and complete `.env` file in same folder as `.env.example` example file.
+```
+DATABASE_URL=databaseConnectionLink
+PORT=chosenPort
+```
+
+#### api-users
+Create and complete `api-users.js` file in same folder as `api-users-example.js`.
+```javascript
+module.exports = {
+    users : { 
+        username1 : "password2",
+        username2 : "password2",
+    }
+}
+```
+
+### Run
+```
+npm start
+```
