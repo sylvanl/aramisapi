@@ -23,6 +23,7 @@ function getUnauthorizedResponse(req) {
 // Import routes
 const routes = {
     estimations: require('./routes/estimations'),
+    expertises: require('./routes/expertises'),
 }
 
 // Home route
@@ -35,6 +36,9 @@ app.get('/', function (req, res) {
 
 // Estimations route
 app.get('/estimations', routes['estimations']['getEstimations']);
+
+// Expertises route
+app.get('/expertises', routes['expertises']['getExpertises']);
 
 // Run app on chosen PORT in .env
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

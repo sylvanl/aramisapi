@@ -3,9 +3,9 @@ const joi = require('joi');
 const pg = require('../utils/database');
 const estimation_columns = require('../utils/data').estimation_columns;
 
-// Estimations route
+// Expertises route
 module.exports = {
-    'getEstimations': async function (req, res) {
+    'getExpertises': async function (req, res) {
 
         const schema = joi.object({
             columns: joi.array().items(
@@ -37,22 +37,22 @@ module.exports = {
 
         const columns = req.body.columns;
         const id = req.body.id;
-        let estimations = [];
+        let expertises = [];
         console.log(id)
 
         try {
             if (id !== undefined) {
                 if (columns.includes("all")) {
                     console.log("All data")
-                    estimations = await pg.select(...estimation_columns)
-                        .from('estimations_ss_expertise')
+                    expertises = await pg.select(...estimation_columns)
+                        .from('estimations_avec_expertise')
                         .where({
                             id: id
                         })
                 } else {
                     console.log("Some data")
-                    estimations = await pg.select(...columns)
-                        .from('estimations_ss_expertise')
+                    expertises = await pg.select(...columns)
+                        .from('estimations_avec_expertise')
                         .where({
                             id: id
                         })
@@ -60,12 +60,12 @@ module.exports = {
             } else {
                 if (columns.includes("all")) {
                     console.log("All data")
-                    estimations = await pg.select(...estimation_columns)
-                        .from('estimations_ss_expertise')
+                    expertises = await pg.select(...estimation_columns)
+                        .from('estimations_avec_expertise')
                 } else {
                     console.log("Some data")
-                    estimations = await pg.select(...columns)
-                        .from('estimations_ss_expertise')
+                    expertises = await pg.select(...columns)
+                        .from('estimations_avec_expertise')
                 }
             }
         } catch (err) {
@@ -79,12 +79,12 @@ module.exports = {
             });
         }
 
-        console.log('Estimations: ', estimations)
+        console.log('Expertises: ', expertises)
 
         return res.status(200).json({
             statusCode: 200,
             error: null,
-            data: estimations
+            data: expertises
         });
     },
 }
