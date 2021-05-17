@@ -1,5 +1,5 @@
 # Documentation aramisapi
-Welcome to my data project API allowing you to manage data relating to the enhanced customer experience created by team 2.
+Welcome to my data project API allowing you to manage data relating to the enhanced customer experience created by the Survey Corps team (War chant this way -> https://www.youtube.com/watch?v=BhipGqSZEB0).
 
 ## Table of contents
 * [General information](#General)

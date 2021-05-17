@@ -45,14 +45,14 @@ module.exports = {
                 if (columns.includes("all")) {
                     console.log("All data")
                     estimations = await pg.select(...estimation_columns)
-                        .from('estimations')
+                        .from('estimations_avec_expertise')
                         .where({
                             id: id
                         })
                 } else {
                     console.log("Some data")
                     estimations = await pg.select(...columns)
-                        .from('estimations')
+                        .from('estimations_avec_expertise')
                         .where({
                             id: id
                         })
@@ -61,11 +61,11 @@ module.exports = {
                 if (columns.includes("all")) {
                     console.log("All data")
                     estimations = await pg.select(...estimation_columns)
-                        .from('estimations')
+                        .from('estimations_avec_expertise')
                 } else {
                     console.log("Some data")
                     estimations = await pg.select(...columns)
-                        .from('estimations')
+                        .from('estimations_avec_expertise')
                 }
             }
         } catch (err) {
